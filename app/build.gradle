@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+
+    defaultConfig {
+        applicationId "com.naumchevski.iotcontrol"
+        minSdkVersion 18
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.koushikdutta.async:androidasync:2.1.7'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'info.hoang8f:android-segmented:1.0.6'
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'com.esri.arcgis.android:arcgis-android:10.2.8'
+}
